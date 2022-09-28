@@ -3,5 +3,5 @@ class User < ApplicationRecord
     scope :inactive_users, -> { where(active: false)}
     validates :firstName, presence: true
     validates :lastName, presence: true
-    validates :email, presence: true
+    validates :email, presence: true, uniqueness: true
 end
